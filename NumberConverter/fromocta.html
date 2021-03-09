@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>UTILITY APP</title>
+		<!-- <link rel="icon" type="image/png" href="https://i.imgur.com/P5A06kx.png" /> -->
+
+		<style type="text/css">
+			body {
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+
+			main {
+				width: 100%;
+				flex: 1 0 auto;
+			}
+
+			footer {
+				width: 100%;
+			}
+
+			div.card-panel {
+				margin-top: 16px;
+			}
+
+			form {
+				padding: 16px;
+			}
+
+			.top-redishorts {
+				padding: 16px;
+			}
+
+          .c{
+                 margin-bottom: 20px;
+                padding-bottom: 20px;
+                 
+                 position:fixed;
+                 width: 100%;
+
+            }
+            .x
+            {
+                 /* margin-top: 10px; */
+                 position:fixed;
+            }
+
+			.op {
+            font-family: "Trebuchet MS", Verdana, sans-serif;
+			font-weight: bold;
+			font-size: 150%;
+             }
+ 
+           
+		</style>
+        <link rel="stylesheet" href="../styles3.css">
+        	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+		<!--Import Google Icon Font-->
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<!-- Compiled and minified CSS -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+		/>       
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+	<body>
+       
+            
+		<main>
+            <div class="navbar x">
+                <a href="../index.html">Home</a>
+				<a href="./frombinary.html">From Binary</a>
+				<a href="./fromoct.html">From Octal</a>
+				<a href="./fromdec.html">From Decimal</a>
+				<a href="./fromhex.html">From Hexadecimal</a>
+            
+               
+    
+              </div>
+
+			<div class="container">  
+				<div class="row">
+					<div class="col s12 offset-m2 m8 offset-l3 l6 card-panel hoverable">
+						<form id="form_url_short" action="">
+							<div style="padding-bottom: 8px;">
+								<h5>
+									<i class="material-icons">push_pin</i> Enter Octal Number
+								</h5>
+							</div>
+							<div class="input-field">
+								<i class="material-icons prefix">link</i>            
+								<input  id="inp_url" placeholder="Enter the Octal Number" >
+								<!-- <label for="inp_url">Long url</label> -->
+							</div>
+                           
+							<div class="right-align">
+								<button
+									class="btn-small waves-effect waves-light"
+									type="submit" 
+								>
+									Convert to Other Base System
+									<i class="material-icons right">send</i>
+								</button>
+							</div>
+							<div id="decop" class="op" ></div>
+							<div id="octop" class="op" ></div>
+							<div id="hexop" class="op"></div>
+                            
+
+
+							
+							<!-- <div class="left-align" >
+								
+							<div class="btn-small waves-effect waves-light">
+							<input
+							type="button" id="btns"
+								
+								value="Copy" class=" waves-light"
+							>
+							<i class="material-icons right">content_copy</i>
+						</div>
+						</div> -->
+						</form> 
+					</div>
+				</div>
+
+               
+
+
+               
+
+               
+    
+                   
+				<div class="row">
+					<div class="col s12 offset-m2 m8 offset-l3 l6 card-panel hoverable">
+						<div class="top-redishorts">
+							<div style="padding-bottom: 8px;">
+								<h5><i class="material-icons">thumb_up</i> Trivia</h5>
+							</div>
+
+							
+							<div id="result_top-redishorts" ></div>
+                            <div><h5><i class="material-icons">arrow_forward</i> <a href="https://www.w3resource.com/convert/number/octal-to-binary.php">How to get Binary from Octal?</a> </h5></div>
+							<div><h5><i class="material-icons">arrow_forward</i> <a href="https://www.math-salamanders.com/convert-octal-to-decimal.html">How to get Decimal from Octal?</a> </h5></div>
+							<div><h5><i class="material-icons">arrow_forward</i> <a href="https://www.w3resource.com/convert/number/octal-to-hex.php">How to get Hexadecimal from Octal?</a> </h5></div>
+
+
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+			
+
+		</main>
+
+
+		<footer class="page-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col m8 s12">
+						<h4 class="white-text">UTILITY APP</h4>
+						<h4 class="white-text">NUMBER CONVERTER</h4>
+						<p class="grey-text text-lighten-4 flow-text">
+							Made with <i class="material-icons">favorite</i> by Asish
+						</p>
+					</div>
+					<div class="col m3 offset-m1 s12">
+						<h5 class="white-text">Links</h5>
+						<ul>
+							<li>
+								<h6>
+									<a
+										class="grey-text text-lighten-3"
+										href="https://github.com/aku019"
+										target="_blank"
+										><i class="fab fa-github"></i> Github</a
+									>
+								</h6>
+							</li>
+							<li>
+								<h6>
+									<a
+										class="grey-text text-lighten-3"
+										href="https://www.linkedin.com/in/asish-kumar-upadhyay-971478142/"
+										target="_blank"
+										><i class="fab fa-linkedin"></i> Linkedin</a
+									>
+								</h6>
+							</li>
+							<li>
+								<h6>
+									<a
+										class="grey-text text-lighten-3"
+										href="https://twitter.com/AsishkumarUpad2"
+										target="_blank"
+										><i class="fab fa-twitter"></i> Twitter</a
+									>
+								</h6>
+							</li>
+							<li>
+								<h6>
+									<a
+										class="grey-text text-lighten-3"
+										href="https://www.facebook.com/asishkrupadhyay/"
+										target="_blank"
+										><i class="fab fa-facebook"></i> Facebook</a
+									>
+								</h6>
+							</li>
+							<li>
+								<h6>
+									<a
+										class="grey-text text-lighten-3"
+										href="https://drive.google.com/file/d/1h5Sj2p5vPX53avlZoQFIfAl8eGnzPioz/view"
+										target="_blank"
+										><i class="fas fa-file"></i> Resume</a
+									>
+								</h6>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+<script>
+	 function begin() {
+                
+				const ip = document.getElementById("inp_url");
+                
+				const formUrlShort = document.getElementById("form_url_short");
+                
+				const hexop = document.getElementById("hexop");
+				const octop = document.getElementById("octop");
+				const decop = document.getElementById("decop");
+                const res2 = document.getElementById("btns");
+				//divResult.innerHTML=inpUrl.value;
+				
+
+				function valid(x)
+              {
+              
+                var start=0;
+  if(x[0]==='-')
+  start+=1;
+for(var i=start;i<x.length;i++)
+{
+    if((x[i]>='0'&&x[i]<='7'))
+    continue;
+    else
+    return 0;
+}
+return 1;
+}
+function convert(e)
+{
+	e.preventDefault();
+	 if(!valid(ip.value))
+    { 
+        ip.value="Not a Correct Input";
+      //ip.style.color="red";
+      //op.value=""
+     }
+     else
+	 {
+		
+	  
+     const bin =  (parseInt(ip.value, 8).toString(2)).padStart(8, '0');
+	 const dec =(parseInt(ip.value, 8).toString(10));
+	 const hex =(parseInt(ip.value, 8).toString(16));
+   	 decop.innerHTML=`Binary: ${bin}`;
+	 octop.innerHTML=`Decimal: ${dec}`;
+	 hexop.innerHTML=`Hex: ${hex}`;
+	 }
+
+
+
+	 }
+	 formUrlShort.addEventListener("submit", convert);
+	}
+
+	 document.addEventListener("DOMContentLoaded", begin);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+
+    </body>
+    </html>
