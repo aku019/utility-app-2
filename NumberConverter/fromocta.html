@@ -53,6 +53,16 @@
 			font-weight: bold;
 			font-size: 150%;
              }
+
+             .div2
+             {
+                 margin-top: 10px;
+             }
+
+             .text-area
+             {
+                height:75px;
+             }
  
            
 		</style>
@@ -79,11 +89,11 @@
 		<main>
             <div class="navbar x">
                 <a href="../index.html">Home</a>
-				<a href="./frombinary.html">From Binary</a>
-				<a href="./fromoct.html">From Octal</a>
-				<a href="./fromdec.html">From Decimal</a>
-				<a href="./fromhex.html">From Hexadecimal</a>
-            
+				<a href="./frombin.html">From Binary</a>
+				<a href="./fromocta.html">From Octal</a>
+				<a href="./fromdecimal.html">From Decimal</a>
+				<a href="./fromhexa.html">From Hexadecimal</a>
+
                
     
               </div>
@@ -94,31 +104,45 @@
 						<form id="form_url_short" action="">
 							<div style="padding-bottom: 8px;">
 								<h5>
-									<i class="material-icons">push_pin</i> Enter Octal Number
+									<i class="material-icons">push_pin</i> From Octal
 								</h5>
 							</div>
 							<div class="input-field">
-								<i class="material-icons prefix">link</i>            
-								<input  id="inp_url" placeholder="Enter the Octal Number" >
-								<!-- <label for="inp_url">Long url</label> -->
-							</div>
-                           
-							<div class="right-align">
-								<button
-									class="btn-small waves-effect waves-light"
-									type="submit" 
-								>
-									Convert to Other Base System
-									<i class="material-icons right">send</i>
-								</button>
-							</div>
-							<div id="decop" class="op" ></div>
-							<div id="octop" class="op" ></div>
-							<div id="hexop" class="op"></div>
-                            
-
-
+								<i class="material-icons prefix">input</i>      
+								
+								<input  id="inp_url" placeholder="Enter to Convert" >
 							
+
+							</div>
+							
+                           
+							<div > 
+								<input
+									class="btn-small waves-effect waves-light"
+									value="To Binary"
+									id="bin"
+									type="button"
+								>
+									
+									
+								
+								<input
+									class="btn-small waves-effect waves-light"
+									value="To Decimal"
+									id="dec"
+									type="button"
+								>
+								<input
+									class="btn-small waves-effect waves-light"
+									value="To Hexadecimal"
+									id="hex"
+									type="button"
+								>
+								
+							</div>
+							<div  class="div2" ></div>
+                            <textarea id="decop" class="text-area"  ></textarea>
+
 							<!-- <div class="left-align" >
 								
 							<div class="btn-small waves-effect waves-light">
@@ -134,34 +158,22 @@
 					</div>
 				</div>
 
-               
-
-
-               
-
-               
-    
-                   
-				<div class="row">
+				<!-- <div class="row">
 					<div class="col s12 offset-m2 m8 offset-l3 l6 card-panel hoverable">
 						<div class="top-redishorts">
 							<div style="padding-bottom: 8px;">
 								<h5><i class="material-icons">thumb_up</i> Trivia</h5>
 							</div>
-
+							<div><h5><i class="material-icons">arrow_forward</i> <a href="https://en.wikipedia.org/wiki/MD5">What is MD5?</a> </h5></div>
+							<div><h5><i class="material-icons">arrow_forward</i> <a href="https://en.wikipedia.org/wiki/Secure_Hash_Algorithms">What is SHA?</a> </h5></div>
 							
-							<div id="result_top-redishorts" ></div>
-                            <div><h5><i class="material-icons">arrow_forward</i> <a href="https://www.w3resource.com/convert/number/octal-to-binary.php">How to get Binary from Octal?</a> </h5></div>
-							<div><h5><i class="material-icons">arrow_forward</i> <a href="https://www.math-salamanders.com/convert-octal-to-decimal.html">How to get Decimal from Octal?</a> </h5></div>
-							<div><h5><i class="material-icons">arrow_forward</i> <a href="https://www.w3resource.com/convert/number/octal-to-hex.php">How to get Hexadecimal from Octal?</a> </h5></div>
-
+							
+							
+							
 
 						</div>
 					</div>
-				</div>
-
-
-			</div>
+				</div> -->
 			
 
 		</main>
@@ -239,60 +251,126 @@
 	 function begin() {
                 
 				const ip = document.getElementById("inp_url");
+                // const ip2 = document.getElementById("inp_url2");
+                // const ip3 = document.getElementById("inp_url3");
+                // const ip4 = document.getElementById("inp_url4");
                 
-				const formUrlShort = document.getElementById("form_url_short");
+				const bin = document.getElementById("bin");
+                const dec = document.getElementById("dec");
+                const hex = document.getElementById("hex");
+                //const idsha512 = document.getElementById("sha512");
                 
-				const hexop = document.getElementById("hexop");
-				const octop = document.getElementById("octop");
 				const decop = document.getElementById("decop");
-                const res2 = document.getElementById("btns");
-				//divResult.innerHTML=inpUrl.value;
-				
+                // const decop2 = document.getElementById("decop2");
+                // const decop3 = document.getElementById("decop3");
+                // const decop4 = document.getElementById("decop4");
+                const res = document.getElementById("btns");
+                // const res2 = document.getElementById("btns2");
+                // const res3 = document.getElementById("btns3");
+                // const res4 = document.getElementById("btns4");
+				// //divResult.innerHTML=inpUrl.value;
+				function valid(x){
+              var start=0;
+              if(x[0]==='-')
+             start+=1;
+        for(var i=start;i<x.length;i++)
+        {
+      if((x[i]>='0'&&x[i]<='7'))
+         continue;
+        else
+       return 0;
+       }
+	   return 1;
 
-				function valid(x)
-              {
-              
-                var start=0;
-  if(x[0]==='-')
-  start+=1;
-for(var i=start;i<x.length;i++)
-{
-    if((x[i]>='0'&&x[i]<='7'))
-    continue;
-    else
-    return 0;
-}
-return 1;
-}
-function convert(e)
+}         
+function decf(e)
 {
 	e.preventDefault();
+    
 	 if(!valid(ip.value))
     { 
         ip.value="Not a Correct Input";
-      //ip.style.color="red";
+      ip.style.color="red";
       //op.value=""
      }
      else
 	 {
 		
 	  
-     const bin =  (parseInt(ip.value, 8).toString(2)).padStart(8, '0');
+        const bin =  (parseInt(ip.value, 8).toString(2)).padStart(8, '0');
 	 const dec =(parseInt(ip.value, 8).toString(10));
 	 const hex =(parseInt(ip.value, 8).toString(16));
-   	 decop.innerHTML=`Binary: ${bin}`;
-	 octop.innerHTML=`Decimal: ${dec}`;
-	 hexop.innerHTML=`Hex: ${hex}`;
+   	 decop.innerHTML=dec;//`Decimal: ${dec}`;
+	 //octop.innerHTML=`Octal: ${oct}`;
+	 //hexop.innerHTML=`Hexadecimal: ${hex}`;
 	 }
 
 
 
 	 }
-	 formUrlShort.addEventListener("submit", convert);
+
+     function binf(e)
+{
+	e.preventDefault();
+    
+	 if(!valid(ip.value))
+    { 
+        ip.value="Not a Correct Input";
+      ip.style.color="red";
+      //op.value=""
+     }
+     else
+	 {
+		
+	  
+    const bin =  (parseInt(ip.value, 8).toString(2)).padStart(8, '0');
+	 const dec =(parseInt(ip.value, 8).toString(10));
+	 const hex =(parseInt(ip.value, 8).toString(16));
+   	 decop.innerHTML=bin;//`Decimal: ${hex}`;
+	 //octop.innerHTML=`Octal: ${oct}`;
+	 //hexop.innerHTML=`Hexadecimal: ${hex}`;
+	 }
+
+
+
+	 }
+     function hexf(e)
+{
+	e.preventDefault();
+    
+	 if(!valid(ip.value))
+    { 
+        ip.value="Not a Correct Input";
+      ip.style.color="red";
+      //op.value=""
+     }
+     else
+	 {
+		
+	  
+        const bin =  (parseInt(ip.value, 8).toString(2)).padStart(8, '0');
+	 const dec =(parseInt(ip.value, 8).toString(10));
+	 const hex =(parseInt(ip.value, 8).toString(16));
+   	 decop.innerHTML=hex;//`Decimal: ${dec}`;
+	// octop.innerHTML=`Octal: ${oct}`;
+	 //hexop.innerHTML=`Hexadecimal: ${hex}`;
+	 }
+
+
+
+	 }
+
+
+
+	 dec.addEventListener("click", decf);
+     bin.addEventListener("click", binf);
+     hex.addEventListener("click",hexf);
+    // idsha512.addEventListener("click", sha5);
 	}
 
 	 document.addEventListener("DOMContentLoaded", begin);
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 
     </body>
