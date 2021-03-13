@@ -3,6 +3,22 @@
 	<head>
 		<title>UTILITY APP</title>
 		<!-- <link rel="icon" type="image/png" href="https://i.imgur.com/P5A06kx.png" /> -->
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+      <link rel = "stylesheet"
+         href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel = "stylesheet"
+         href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+      <script type = "text/javascript"
+         src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+      </script> 
+      
+      <script>
+         $(document).ready(function() {
+            $('select').material_select();
+         });
+      </script>
+      <script defer src='./translate.js'></script>
 
 		<style type="text/css">
 			body {
@@ -53,10 +69,25 @@
 			font-weight: bold;
 			font-size: 150%;
              }
+
+             .div2
+             {
+                 margin-top: 10px;
+             }
+
+             .text-area
+             {
+                height:100px;
+             }
+
+             .buttonFlex{
+                 display: flex;
+                 justify-content: space-between;
+             }
  
            
 		</style>
-        <link rel="stylesheet" href="../styles3.css">
+        <link rel="stylesheet" href="./stopwatch.css">
         	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 
@@ -72,6 +103,8 @@
 		/>       
 		<!--Let browser know website is optimized for mobile-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <script defer src='./stopwatch.js'></script>
 	</head>
 	<body>
        
@@ -91,39 +124,68 @@
 				<a href="./stopwatch.html">StopWatch</a>
 				<a href="./time.html">Time</a>
               </div>
-
-			<div class="container">  
-            <div class="row">
+              <div class="container">  
+				<div class="row">
 					<div class="col s12 offset-m2 m8 offset-l3 l6 card-panel hoverable">
-						<div class="top-redishorts">
-							<div style="padding-bottom: 8px;">
-								<h5><i class="material-icons">thumb_up</i> Hey ya!</h5>
+						<!-- <form id="form_url_short" action=""> -->
+                     <div style="padding-bottom: 8px;">
+								<h5>
+									<i class="material-icons">push_pin</i> Language Translator
+								</h5>
 							</div>
-							<div><h5><i class="material-icons">arrow_forward</i> Welcome to the world of Utility Applications </h5></div>
-							<div><h5><i class="material-icons">arrow_forward</i>Just like anything in this world, this website is also in constant improvment and I would be adding more features to it. </h5></div>
-							<div><h5><i class="material-icons">arrow_forward</i> Hope you find the apps you are looking for.</div>
+                     <!-- <label>Translate From</label> -->
+                     <select id="iptype">
+                        <option value = "" disabled selected>Translate From</option>
+                        <option value = "English">English</option>
+                        <option value = "Hindi">Hindi</option>
+                        <option value = "Italian">Italian</option>
+                     </select>   
+                     
+                     <!-- <label>Translate To</label> -->
+                     <select id="optype">
+                        <option value = "" disabled selected>Translate To</option>
+                        <option value = "English">English</option>
+                        <option value = "Hindi">Hindi</option>
+                        <option value = "Italian">Italian</option>
+                     </select>   
 
-							
-							
-							
+                     
+                     <div  class="div2" ></div>
+                     <textarea id="input" class="text-area"  placeholder="Enter your text"></textarea>
 
-						</div>
-					</div>
-				</div>
+                 <div class="center-align">
+                     <input
+            class="btn-small waves-effect waves-light"
+            value="Translate"
+            id="btn"
+            type="button"
+         >
+                 
+                 
+                 
+                 </div>
+                 
+      
 
+      
+             <div  class="div2" ></div>
+             <textarea id="output" class="text-area"  ></textarea>
+                  
+                          
 
-			</div>
+                            <!-- </form> -->
+                            </div>
+                            </div>
+                            </div>
+                    
+
 			
-
-		</main>
-
-
 		<footer class="page-footer">
 			<div class="container">
 				<div class="row">
 					<div class="col m8 s12">
 						<h4 class="white-text">UTILITY APP</h4>
-						<!-- <h4 class="white-text">NUMBER CONVERTER</h4> -->
+						<h4 class="white-text">TRANSLATOR</h4>
 						<p class="grey-text text-lighten-4 flow-text">
 							Made with <i class="material-icons">favorite</i> by Asish
 						</p>
@@ -186,8 +248,9 @@
 				</div>
 			</div>
 		</footer>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
-      
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+
     </body>
     </html>

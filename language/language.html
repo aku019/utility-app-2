@@ -54,35 +54,31 @@
 			font-size: 150%;
              }
 
-             .div2
-             {
+             .text-area{
+                 height: 150px;
                  margin-top: 10px;
+                 margin-bottom: 10px;
              }
 
-             .text-area
-             {
-                height:75px;
-             }
-
-			 @media all and (max-width: 980px) {
-				 /* .btn
-				 {
-					 width: 100%;
-					 display: flex;
-					 flex-direction: column-reverse;
-
-				 } */
-
-				 .x1
-				 {
-					 width: 100%;
-					 margin-bottom: 10px;
-				 }
-			 }
- 
+             
  
            
 		</style>
+		 <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+		 <link rel = "stylesheet"
+			href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+		 <link rel = "stylesheet"
+			href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+		 <script type = "text/javascript"
+			src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+		 <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+		 </script> 
+		 
+		 <script>
+			$(document).ready(function() {
+			   $('select').material_select();
+			});
+		 </script>
         <link rel="stylesheet" href="../styles3.css">
         	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
@@ -105,95 +101,75 @@
             
 		<main>
             <div class="navbar x">
-                <a href="../index.html">Home</a>
-				<a href="../NumberConverter\frombin.html">Number Converter</a>
-				<a href="../TIme-converter\time2epoch.html">Time Converter</a>
-				<a href="../Encoder-Crypto\Url-Encoder-decoder.html">Encoder/Decoder</a>
-				<a href="../Encoder-Crypto\Hashing.html">Hashing</a>
-                <a href="../colour-converter\colour.html">Colour Converter</a>
-                <a href="../string-functions\string.html">Strings</a>
-                <a href="../unit_converter\length-conversion.html">Unit Converter</a>
-				<a href="../translate.html">Language Translator</a>
-				<a href="../ip/ip.html">Know your IP</a>
-				<a href="../stopwatch.html">StopWatch</a>
-				<a href="../time.html">Time</a>
-            
-            
-            
-               
-    
+				<a href="../index.html">Home</a>
+                <a href="./unit_converter\length-conversion.html">Length Converter</a>
+           
+     
               </div>
 
-			<div class="container">  
+
+			  
+			 
+                
 				<div class="row">
 					<div class="col s12 offset-m2 m8 offset-l3 l6 card-panel hoverable">
 						<form id="form_url_short" action="">
 							<div style="padding-bottom: 8px;">
 								<h5>
-									<i class="material-icons">push_pin</i> Enter String
+									<i class="material-icons">push_pin</i> Language Translator
 								</h5>
 							</div>
+
+							<div class = "row">
+								<label>Select with Optgroup</label>
+								<select>
+								   <optgroup label = "Fruits">
+									  <option value = "1">Mango</option>
+									  <option value = "2">Orange</option>
+									  <option value = "3">Apple</option>
+								   </optgroup>
+								   
+								   <optgroup label = "Vegs">
+									  <option value = "4">Brinjal</option>
+									  <option value = "5">Potato</option>
+									  <option value = "6">Tomato</option>
+								   </optgroup>
+								</select>
+							 </div>
+
+                           
+                
+
+
+
 							<div class="input-field">
-								<i class="material-icons prefix">link</i>            
+							           
 								<!-- <p>Time: -->
 								
-								<input  id="inp_url" placeholder="Enter the String" >
-								<!-- <input type="date" id="start" name="trip-start"
-       value="2018-07-22"
-       min="2018-01-01" max="2018-12-31">
-	   <input type="time" id="start" name="trip-start"  step="1"> -->
-								<!-- <label for="inp_url">Long url</label> -->
+                                    <div  class="div2" ></div>
+                                    <textarea id="inp_url" class="text-area"  placeholder="Enter your text"></textarea>
+				
+                                <div class="center-align">
+                                    <input
+									class="btn-small waves-effect waves-light"
+									value="Translate"
+									id="f2y"
+									type="button"
+								>
+                                
+                                
+                                
+                                </div>
+                                
 							
 
 							</div>
+                            <div  class="div2" ></div>
+                            <textarea id="op" class="text-area"  ></textarea>
+
 							
                            
-							<!-- <div class="right-align"> -->
-								<input
-									class="btn-small waves-effect waves-light x1"
-									value="Char Count"
-									id="char"
-									type="button"
-								>
-									
-									
-								
-								<input
-									class="btn-small waves-effect waves-light x1"
-									value="To Upper"
-									id="up"
-									type="button"
-								>
-								<input
-									class="btn-small waves-effect waves-light x1"
-									value="To Lower"
-									id="low"
-									type="button"
-								>
-								<input
-									class="btn-small waves-effect waves-light x1"
-									value="Words Count"
-									id="word"
-									type="button"
-								>
-							<div  class="div2" ></div>
-                            <textarea id="decop" class="text-area"  ></textarea>
-							
-                            
-
-
-							
-							<!-- <div class="left-align" >
-								
-							<div class="btn-small waves-effect waves-light">
-							<input
-							type="button" id="btns"
-								
-								value="Copy" class=" waves-light"
-							>
-							<i class="material-icons right">content_copy</i>
-						</div>
-						</div> -->
+						
 						</form> 
 					</div>
 				</div>
@@ -236,7 +212,7 @@
 				<div class="row">
 					<div class="col m8 s12">
 						<h4 class="white-text">UTILITY APP</h4>
-						<h4 class="white-text">STRING FUNCTION</h4>
+						<h4 class="white-text">LANGUAGE CONVERTER</h4>
 						<p class="grey-text text-lighten-4 flow-text">
 							Made with <i class="material-icons">favorite</i> by Asish
 						</p>
@@ -301,49 +277,57 @@
 		</footer>
 <script>
 	 function begin() {
-                
+		var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
 				const ip = document.getElementById("inp_url");
                 
-				const formUrlShort = document.getElementById("form_url_short");
+				const y2f = document.getElementById("y2f");
+                const f2y = document.getElementById("f2y");
                 
-				const up = document.getElementById("up");
-				const low = document.getElementById("low");
-				const char = document.getElementById("char");
-				const word = document.getElementById("word");
-				const output = document.getElementById("decop");
-                //const res2 = document.getElementById("btns");
+				// const hexop = document.getElementById("hexop");
+				// const octop = document.getElementById("octop");
+				 const op = document.getElementById("op");
+                // const res2 = document.getElementById("btns");
 				//divResult.innerHTML=inpUrl.value;
 				
 
 			
+function y2ff(e)
+{
+	e.preventDefault();
+    op.value = `${ip.value} Yards is  ${ip.value*3} Feet`;
+	
 
-
-function upf(e)
-{
-	output.value =  ip.value.toUpperCase();
-}
-function lowf(e)
-{
-	output.value =  ip.value.toLowerCase();
-}
-function wordf(e)
-{
-	output.value =  ip.value.split(" ").length;
-}
-function charf(e)
-{
-	output.value =  ip.value.length;
 }
 
-	 low.addEventListener("click", lowf);
-	 word.addEventListener("click", wordf);
-	 char.addEventListener("click", charf);
-	 up.addEventListener("click", upf);
+function f2yf(e)
+{
+	e.preventDefault();
+    //op.value = ip.value/3;
+    op.value = `${ip.value} Feet is  ${ip.value/3} Yard`;
+	
+
+}
+
+y2f.addEventListener("click", y2ff);
+     f2y.addEventListener("click", f2yf);
 	}
+// 	document.addEventListener('DOMContentLoaded', function() {
+//     var elems = document.querySelectorAll('.dropdown-trigger');
+//     var instances = M.Dropdown.init(elems, options);
+//   });
 
 	 document.addEventListener("DOMContentLoaded", begin);
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script>
+     $(document).ready(function() {
+        $('select').material_select();
+    });
+  </script>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script> -->
 
     </body>
     </html>

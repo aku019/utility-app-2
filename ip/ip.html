@@ -78,18 +78,18 @@
             
 		<main>
             <div class="navbar x">
-                <a href="./index.html">Home</a>
-				<a href="./NumberConverter\frombin.html">Number Converter</a>
-				<a href="./TIme-converter\time2epoch.html">Time Converter</a>
-				<a href="./Encoder-Crypto\Url-Encoder-decoder.html">Encoder/Decoder</a>
-				<a href="./Encoder-Crypto\Hashing.html">Hashing</a>
-                <a href="./colour-converter\colour.html">Colour Converter</a>
-                <a href="./string-functions\string.html">Strings</a>
-                <a href="./unit_converter\length-conversion.html">Unit Converter</a>
-				<a href="./translate.html">Language Translator</a>
-				<a href="./ip/ip.html">Know your IP</a>
-				<a href="./stopwatch.html">StopWatch</a>
-				<a href="./time.html">Time</a>
+				<a href="../index.html">Home</a>
+				<a href="../NumberConverter\frombin.html">Number Converter</a>
+				<a href="../TIme-converter\time2epoch.html">Time Converter</a>
+				<a href="../Encoder-Crypto\Url-Encoder-decoder.html">Encoder/Decoder</a>
+				<a href="../Encoder-Crypto\Hashing.html">Hashing</a>
+                <a href="../colour-converter\colour.html">Colour Converter</a>
+                <a href="../string-functions\string.html">Strings</a>
+                <a href="../unit_converter\length-conversion.html">Unit Converter</a>
+				<a href="../translate.html">Language Translator</a>
+				<a href="../ip/ip.html">Know your IP</a>
+				<a href="../stopwatch.html">StopWatch</a>
+				<a href="../time.html">Time</a>
               </div>
 
 			<div class="container">  
@@ -99,9 +99,15 @@
 							<div style="padding-bottom: 8px;">
 								<h5><i class="material-icons">thumb_up</i> Hey ya!</h5>
 							</div>
-							<div><h5><i class="material-icons">arrow_forward</i> Welcome to the world of Utility Applications </h5></div>
-							<div><h5><i class="material-icons">arrow_forward</i>Just like anything in this world, this website is also in constant improvment and I would be adding more features to it. </h5></div>
-							<div><h5><i class="material-icons">arrow_forward</i> Hope you find the apps you are looking for.</div>
+							<div><h5><i class="material-icons">arrow_forward</i> Your IP is: </h5></div>
+                            <div  class="div2" ></div>
+                            <textarea id="op" class="text-area"  ></textarea>
+							<div><h5><i class="material-icons">arrow_forward</i>Are you from: </div>
+                                <div  class="div2" ></div>
+                            <textarea id="op2" class="text-area"  ></textarea>
+                            <div><h5><i class="material-icons">arrow_forward</i>Can you help me with this?: </div>
+                                <div  class="div2" ></div>
+                            <textarea id="op3" class="text-area"  ></textarea>
 
 							
 							
@@ -186,8 +192,48 @@
 				</div>
 			</div>
 		</footer>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
-      
+        <script>
+            function begin() {
+                       
+                    //    const ip = document.getElementById("inp_url");
+                    //    const ip2 = document.getElementById("inp_url2");
+                       
+                    //    const formUrlShort = document.getElementById("form_url_short");
+                    //    const formUrlShort2 = document.getElementById("form_url_short2");
+                       
+                       const op = document.getElementById("op");
+                       const op2 = document.getElementById("op2");
+                       const op3 = document.getElementById("op3");
+                    //    const res = document.getElementById("btns");
+                    //    const res2 = document.getElementById("btns2");
+                       //divResult.innerHTML=inpUrl.value;
+
+                       fetch('https://api64.ipify.org?format=json')
+    .then((response) => response.json())
+    .then((json) => {
+        console.log(json);
+        document.getElementById('op').value = json.ip;
+        fetch(`https://ipapi.co/${json.ip}/json/`)
+    .then((response) => response.json())
+    .then((json) => {
+        console.log(json);
+        //document.getElementById('op').value = json.ip;
+        document.getElementById('op2').value = `${json.city}?`;
+        document.getElementById('op3').value = `Is internet service by "${json.org}" good?`;
+    });
+        //document.getElementById('op2').value = json.city;
+    });
+                       
+       
+       
+            // formUrlShort.addEventListener("submit", encode);
+            // formUrlShort2.addEventListener("submit", decode);
+           }
+       
+            document.addEventListener("DOMContentLoaded", begin);
+       </script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+       
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
     </body>
     </html>

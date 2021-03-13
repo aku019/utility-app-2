@@ -99,9 +99,15 @@
 							<div style="padding-bottom: 8px;">
 								<h5><i class="material-icons">thumb_up</i> Hey ya!</h5>
 							</div>
-							<div><h5><i class="material-icons">arrow_forward</i> Welcome to the world of Utility Applications </h5></div>
-							<div><h5><i class="material-icons">arrow_forward</i>Just like anything in this world, this website is also in constant improvment and I would be adding more features to it. </h5></div>
-							<div><h5><i class="material-icons">arrow_forward</i> Hope you find the apps you are looking for.</div>
+							<div><h5><i class="material-icons">arrow_forward</i>Time now is: </h5></div>
+                            <div  class="div2" ></div>
+                            <textarea id="op" class="text-area"  ></textarea>
+							<div><h5><i class="material-icons">arrow_forward</i>Oh! You Didn't get that? Try this: </div>
+                                <div  class="div2" ></div>
+                            <textarea id="op2" class="text-area"  ></textarea>
+                            <!-- <div><h5><i class="material-icons">arrow_forward</i>Can you help me with this?: </div>
+                                <div  class="div2" ></div>
+                            <textarea id="op3" class="text-area"  ></textarea> -->
 
 							
 							
@@ -186,8 +192,61 @@
 				</div>
 			</div>
 		</footer>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
-      
+        <script>
+            
+                
+                       
+                    //    const op = document.getElementById("op");
+                    //    const op2 = document.getElementById("op2");
+        
+       
+       
+                       function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+
+  if(m.length==1)
+  m="0"+m;
+  if(h.length==1)
+  h="0"+h;
+  if(s.length==1)
+  s="0"+s;
+  
+    let time = h + ":" + m + ":" + s;
+  
+    var t = setTimeout(startTime, 500);
+    n = new Date();
+    y = n.getFullYear();
+    m = n.getMonth() + 1;
+    d = n.getDate();
+  if(m.length==1)
+  m="0"+m;
+  if(d.length==1)
+  d="0"+d;
+  let day= m + "/" + d + "/" + y;
+  document.getElementById("op2").value = `${time} on ${day}`;
+    document.getElementById("op").value = `${Date.now()} milliseconds since 1 Jan 1970.`;
+  }
+  
+  function checkTime(i) {
+    if (i < 10) {
+      i = "0" + i;
+    }
+    return i;
+  }
+  setInterval(() => {
+    document.title = new Date().toLocaleTimeString();
+  }, 1);
+           
+       
+            document.addEventListener("DOMContentLoaded", startTime);
+       </script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+       
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
     </body>
     </html>

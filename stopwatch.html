@@ -54,6 +54,18 @@
 			font-size: 150%;
              }
 
+             .div2
+             {
+                 margin-top: 10px;
+             }
+
+             .text-area
+             {
+                height:75px;
+             }
+
+            
+			 
 			 @media all and (max-width: 980px) {
 				 /* .btn
 				 {
@@ -67,13 +79,40 @@
 				 {
 					 width: 100%;
 					 margin-bottom: 10px;
+					 /* margin-top: 45%;  */
 				 }
+				 #stopwatch{
+				 margin-top: 45%;
+				 /* margin-bottom: 10%; */
 			 }
- 
+
+			 #buttons{
+				 margin-top: 55%;
+			 }
+
+			
+
+			 
+
+
+
+			
+
+				
+			 }
+
+			 .logic{
+				 margin-top: 10px;
+				 margin-bottom: 10px;
+			 }
+
+			 
+
+			 
  
            
 		</style>
-        <link rel="stylesheet" href="../styles3.css">
+        <link rel="stylesheet" href="./stopwatch.css">
         	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 
@@ -89,107 +128,62 @@
 		/>       
 		<!--Let browser know website is optimized for mobile-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <script defer src='./stopwatch.js'></script>
 	</head>
 	<body>
        
             
 		<main>
             <div class="navbar x">
-				<a href="../index.html">Home</a>
-                <a href="./unit_converter\length-conversion.html">Length Converter</a>
-           
-     
+				<a href="./index.html">Home</a>
+				<a href="./NumberConverter\frombin.html">Number Converter</a>
+				<a href="./TIme-converter\time2epoch.html">Time Converter</a>
+				<a href="./Encoder-Crypto\Url-Encoder-decoder.html">Encoder/Decoder</a>
+				<a href="./Encoder-Crypto\Hashing.html">Hashing</a>
+                <a href="./colour-converter\colour.html">Colour Converter</a>
+                <a href="./string-functions\string.html">Strings</a>
+                <a href="./unit_converter\length-conversion.html">Unit Converter</a>
+				<a href="./translate.html">Language Translator</a>
+				<a href="./ip/ip.html">Know your IP</a>
+				<a href="./stopwatch.html">StopWatch</a>
+				<a href="./time.html">Time</a>   
               </div>
-
-			<div class="container">  
+              <div class="container">  
 				<div class="row">
 					<div class="col s12 offset-m2 m8 offset-l3 l6 card-panel hoverable">
-						<form id="form_url_short" action="">
-							<div style="padding-bottom: 8px;">
-								<h5>
-									<i class="material-icons">push_pin</i> Foot And Yard
-								</h5>
-							</div>
-							<div class="input-field">
-								<i class="material-icons prefix">link</i>            
-								<!-- <p>Time: -->
-								
-								<input  id="inp_url" placeholder="Enter Number" >
-								<!-- <input type="date" id="start" name="trip-start"
-       value="2018-07-22"
-       min="2018-01-01" max="2018-12-31">
-	   <input type="time" id="start" name="trip-start"  step="1"> -->
-								<!-- <label for="inp_url">Long url</label> -->
-                                <div class="left-align">
-                                    <input
-									class="btn-small waves-effect waves-light x1"
-									value="Foot To Yard"
-									id="f2y"
-									type="button"
-								>
-                                
-                                
-                                    <input
-									class="btn-small waves-effect waves-light x1"
-									value="Yard To Foot"
-									id="y2f"
-									type="button"
-								>
-                                
-                                </div>
-                                
-							
+						<!-- <form id="form_url_short" action=""> -->
+                            <section class="logic" >
+								<div class="aku">
+                            <div id="stopwatch" >
+                                00:00:00
+                            </div>
 
-							</div>
-                            <div  class="div2" ></div>
-                            <textarea id="op" class="text-area"  ></textarea>
-
-							
                            
-						
-						</form> 
-					</div>
-				</div>
-
-               
-
-
-               
-
-               
-    
-                   
-				<!-- <div class="row">
-					<div class="col s12 offset-m2 m8 offset-l3 l6 card-panel hoverable">
-						<div class="top-redishorts">
-							<div style="padding-bottom: 8px;">
-								<h5><i class="material-icons">thumb_up</i> Trivia</h5>
-							</div>
-							<div><h5><i class="material-icons">arrow_forward</i> <a href="https://www.tutorialspoint.com/how-to-convert-binary-to-octal">How to get Octal from Binary?</a> </h5></div>
-							<div><h5><i class="material-icons">arrow_forward</i> <a href="https://www.tutorialspoint.com/how-to-convert-binary-to-decimal">How to get Decimal from Binary?</a> </h5></div>
-							<div><h5><i class="material-icons">arrow_forward</i> <a href="https://www.tutorialspoint.com/how-to-convert-binary-to-hexadecimal">How to get Hexadecimal from Binary?</a> </h5></div>
-
-							
-							
-							
-
+                            <ul  id="buttons">
+                                <li style="color: aliceblue;"><button id="start2" class="x1" onclick="startTimer()">Start</button></li>
+                                <li style="color: aliceblue;"><button id="stop2" class="x1" onclick="stopTimer()" >Stop</button></li>
+                    
+                                <li style="color: aliceblue;"><button id="reset2" class="x1" onclick="resetTimer()">Reset</button></li>
+                            </ul>
 						</div>
-					</div>
-				</div> -->
+                        
+                        </section>
+                    
 
+                            <!-- </form> -->
+                            </div>
+                            </div>
+                            </div>
+                    
 
-			</div>
 			
-
-		</main>
-
-
 		<footer class="page-footer">
 			<div class="container">
 				<div class="row">
 					<div class="col m8 s12">
 						<h4 class="white-text">UTILITY APP</h4>
-						<h4 class="white-text">UNIT CONVERTER</h4>
+						<h4 class="white-text">STOP WATCH</h4>
 						<p class="grey-text text-lighten-4 flow-text">
 							Made with <i class="material-icons">favorite</i> by Asish
 						</p>
@@ -252,45 +246,8 @@
 				</div>
 			</div>
 		</footer>
-<script>
-	 function begin() {
-                
-				const ip = document.getElementById("inp_url");
-                
-				const y2f = document.getElementById("y2f");
-                const f2y = document.getElementById("f2y");
-                
-				// const hexop = document.getElementById("hexop");
-				// const octop = document.getElementById("octop");
-				 const op = document.getElementById("op");
-                // const res2 = document.getElementById("btns");
-				//divResult.innerHTML=inpUrl.value;
-				
 
-			
-function y2ff(e)
-{
-	e.preventDefault();
-    op.value = `${ip.value} Yards is  ${ip.value*3} Feet`;
-	
-
-}
-
-function f2yf(e)
-{
-	e.preventDefault();
-    //op.value = ip.value/3;
-    op.value = `${ip.value} Feet is  ${ip.value/3} Yard`;
-	
-
-}
-
-y2f.addEventListener("click", y2ff);
-     f2y.addEventListener("click", f2yf);
-	}
-
-	 document.addEventListener("DOMContentLoaded", begin);
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 
     </body>
