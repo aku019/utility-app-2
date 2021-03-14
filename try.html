@@ -1,8 +1,27 @@
-<!DOCTYPE html>
+
+
+
+  <!DOCTYPE html>
 <html>
 	<head>
 		<title>UTILITY APP</title>
 		<!-- <link rel="icon" type="image/png" href="https://i.imgur.com/P5A06kx.png" /> -->
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+      <link rel = "stylesheet"
+         href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel = "stylesheet"
+         href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+      <script type = "text/javascript"
+         src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+      </script> 
+      
+      <script>
+         $(document).ready(function() {
+            $('select').material_select();
+         });
+      </script>
+      <script defer src='./translate.js'></script>
 
 		<style type="text/css">
 			body {
@@ -61,51 +80,14 @@
 
              .text-area
              {
-                height:75px;
+                height:100px;
              }
 
-            
-			 
-			 @media all and (max-width: 980px) {
-				 /* .btn
-				 {
-					 width: 100%;
-					 display: flex;
-					 flex-direction: column-reverse;
-
-				 } */
-
-				 .x1
-				 {
-					 width: 100%;
-					 margin-bottom: 10px;
-					 /* margin-top: 45%;  */
-				 }
-				 #stopwatch{
-				 margin-top: 45%;
-				 /* margin-bottom: 10%; */
-			 }
-
-			 #buttons{
-				 margin-top: 55%;
-			 }
-
-			
-
-			 
-
-
-
-			
-
-				
-			 }
-
-			 .logic{
-				 margin-top: 10px;
-				 margin-bottom: 10px;
-			 }
-			 .topnav {
+             .buttonFlex{
+                 display: flex;
+                 justify-content: space-between;
+             }
+             .topnav {
   overflow: hidden;
   background-color: #333;
   position: relative;
@@ -146,9 +128,6 @@
   color: white;
 }
 
-			 
-
-			 
  
            
 		</style>
@@ -175,48 +154,77 @@
        
             
 		<main>
-			<div class="topnav">
+            <div class="topnav">
                 <a href="./index.html" class="active">UTILITY APP</a>
                 <!-- Navigation links (hidden by default) -->
                 <div id="myLinks">
-					<a href="./NumberConverter\frombin.html">Number Converter</a>
-					<a href="./TIme-converter\time2epoch.html">Time Converter</a>
-					<a href="./Encoder-Crypto\Url-Encoder-decoder.html">Encoder/Decoder</a>
-					<a href="./Encoder-Crypto\Hashing.html">Hashing</a>
-					<a href="./colour-converter\colour.html">Colour Converter</a>
-					<a href="./string-functions\string.html">Strings</a>
-					<a href="./unit_converter\length-conversion.html">Unit Converter</a>
-					<a href="./translate.html">Language Translator</a>
-					<a href="./ip/ip.html">Know your IP</a>
-					<a href="./stopwatch.html">StopWatch</a>
-					<a href="./time.html">Time</a>  
-				                </div>
+                    <!-- <a href="./index.html">Home</a> -->
+                    <a href="./NumberConverter\frombin.html">Number Converter</a>
+                    <a href="./TIme-converter\time2epoch.html">Time Converter</a>
+                    <a href="./Encoder-Crypto\Url-Encoder-decoder.html">Encoder/Decoder</a>
+                    <a href="./Encoder-Crypto\Hashing.html">Hashing</a>
+                    <a href="./colour-converter\colour.html">Colour Converter</a>
+                    <a href="./string-functions\string.html">Strings</a>
+                    <a href="./unit_converter\length-conversion.html">Unit Converter</a>
+                    <a href="./translate.html">Language Translator</a>
+                    <a href="./ip/ip.html">Know your IP</a>
+                    <a href="./stopwatch.html">StopWatch</a>
+                    <a href="./time.html">Time</a>
+                </div>
                 <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                   <i class="fa fa-bars"></i>
                 </a>
               </div>
+         
               <div class="container">  
 				<div class="row">
 					<div class="col s12 offset-m2 m8 offset-l3 l6 card-panel hoverable">
 						<!-- <form id="form_url_short" action=""> -->
-                            <section class="logic" >
-								<div class="aku">
-                            <div id="stopwatch" >
-                                00:00:00
-                            </div>
+                     <div style="padding-bottom: 8px;">
+								<h5>
+									<i class="material-icons">push_pin</i> Language Translator
+								</h5>
+							</div>
+                     <!-- <label>Translate From</label> -->
+                     <select id="iptype">
+                        <option value = "" disabled selected>Translate From</option>
+                        <option value = "English">English</option>
+                        <option value = "Hindi">Hindi</option>
+                        <option value = "Italian">Italian</option>
+                     </select>   
+                     
+                     <!-- <label>Translate To</label> -->
+                     <select id="optype">
+                        <option value = "" disabled selected>Translate To</option>
+                        <option value = "English">English</option>
+                        <option value = "Hindi">Hindi</option>
+                        <option value = "Italian">Italian</option>
+                     </select>   
 
-                           
-                            <ul  id="buttons">
-                                <li style="color: aliceblue;"><button id="start2" class="x1" onclick="startTimer()">Start</button></li>
-                                <li style="color: aliceblue;"><button id="stop2" class="x1" onclick="stopTimer()" >Stop</button></li>
-                    
-                                <li style="color: aliceblue;"><button id="reset2" class="x1" onclick="resetTimer()">Reset</button></li>
-                            </ul>
-						</div>
-                        
-                        </section>
-                    
+                     
+                     <div  class="div2" ></div>
+                     <textarea id="input" class="text-area"  placeholder="Enter your text"></textarea>
+
+                 <div class="center-align">
+                     <input
+            class="btn-small waves-effect waves-light"
+            value="Translate"
+            id="btn"
+            type="button"
+         >
+                 
+                 
+                 
+                 </div>
+                 
+      
+
+      
+             <div  class="div2" ></div>
+             <textarea id="output" class="text-area"  ></textarea>
+                  
+                          
 
                             <!-- </form> -->
                             </div>
@@ -230,7 +238,7 @@
 				<div class="row">
 					<div class="col m8 s12">
 						<h4 class="white-text">UTILITY APP</h4>
-						<h4 class="white-text">STOP WATCH</h4>
+						<h4 class="white-text">TRANSLATOR</h4>
 						<p class="grey-text text-lighten-4 flow-text">
 							Made with <i class="material-icons">favorite</i> by Asish
 						</p>
@@ -293,16 +301,17 @@
 				</div>
 			</div>
 		</footer>
-		<script>
-			function myFunction() {
-	var x = document.getElementById("myLinks");
-	if (x.style.display === "block") {
-	x.style.display = "none";
-	} else {
-	x.style.display = "block";
-	}
-	}
-		</script>
+        <script>
+            function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+        </script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 

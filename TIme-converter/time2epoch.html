@@ -61,6 +61,47 @@
 			 .text-area{
 				 margin-top: 10px;
 			 }
+			 .topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+  background-color: palevioletred;
+  color: black;
+}
+
+/* Style the active link (or home/logo) */
+.active {
+  background-color: black;
+  color: white;
+}
+
  
            
 		</style>
@@ -85,24 +126,27 @@
        
             
 		<main>
-            <div class="navbar x">
-                <a href="../index.html">Home</a>
-				<a href="../NumberConverter\frombin.html">Number Converter</a>
-				<a href="../TIme-converter\time2epoch.html">Time Converter</a>
-				<a href="../Encoder-Crypto\Url-Encoder-decoder.html">Encoder/Decoder</a>
-				<a href="../Encoder-Crypto\Hashing.html">Hashing</a>
-                <a href="../colour-converter\colour.html">Colour Converter</a>
-                <a href="../string-functions\string.html">Strings</a>
-                <a href="../unit_converter\length-conversion.html">Unit Converter</a>
-				<a href="../translate.html">Language Translator</a>
-				<a href="../ip/ip.html">Know your IP</a>
-				<a href="../stopwatch.html">StopWatch</a>
-				<a href="../time.html">Time</a>
-            
-               
-    
+			<div class="topnav">
+                <a href="./index.html" class="active">UTILITY APP</a>
+                <!-- Navigation links (hidden by default) -->
+                <div id="myLinks">
+					<a href="../NumberConverter\frombin.html">Number Converter</a>
+					<a href="../TIme-converter\time2epoch.html">Time Converter</a>
+					<a href="../Encoder-Crypto\Url-Encoder-decoder.html">Encoder/Decoder</a>
+					<a href="../Encoder-Crypto\Hashing.html">Hashing</a>
+					<a href="../colour-converter\colour.html">Colour Converter</a>
+					<a href="../string-functions\string.html">Strings</a>
+					<a href="../unit_converter\length-conversion.html">Unit Converter</a>
+					<a href="../translate.html">Language Translator</a>
+					<a href="../ip/ip.html">Know your IP</a>
+					<a href="../stopwatch.html">StopWatch</a>
+					<a href="../time.html">Time</a>
+				                </div>
+                <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                  <i class="fa fa-bars"></i>
+                </a>
               </div>
-
 			<div class="container">  
 				<div class="row">
 					<div class="col s12 offset-m2 m8 offset-l3 l6 card-panel hoverable">
@@ -322,6 +366,16 @@ decop.value=`${myEpoch} MilliSeconds`;
 	}
 
 	 document.addEventListener("DOMContentLoaded", begin);
+</script>
+<script>
+	function myFunction() {
+var x = document.getElementById("myLinks");
+if (x.style.display === "block") {
+x.style.display = "none";
+} else {
+x.style.display = "block";
+}
+}
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 
